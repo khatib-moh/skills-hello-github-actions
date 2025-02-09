@@ -11,6 +11,8 @@ runs:
   steps:
     - name: Print a message
       run: echo "🚀 Running the composite action!"
+      shell: bash  
+
 
     - name: Run Script
       run: bash ${{ inputs.script-path }}
