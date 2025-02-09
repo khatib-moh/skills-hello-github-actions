@@ -1,5 +1,5 @@
 name: "My Composite Action"
-description: "Checks out the repo and runs a script"
+description: "Runs a script and prints a message"
 inputs:
   script-path:
     description: "Path to the script to run"
@@ -9,8 +9,8 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
+    - name: Print a message
+      run: echo "🚀 Running the composite action!"
 
     - name: Run Script
       run: bash ${{ inputs.script-path }}
