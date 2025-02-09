@@ -1,0 +1,17 @@
+name: "My Composite Action"
+description: "Checks out the repo and runs a script"
+inputs:
+  script-path:
+    description: "Path to the script to run"
+    required: true
+    default: "scripts/run.sh"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Run Script
+      run: bash ${{ inputs.script-path }}
+      shell: bash
