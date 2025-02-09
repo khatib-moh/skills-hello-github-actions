@@ -1,0 +1,12 @@
+name: CI/CD Pipeline
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Custom Composite Action
+        uses: ./.github/actions/my-composite-action
+        with:
+          script-path: "scripts/my-test.sh"
