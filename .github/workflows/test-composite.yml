@@ -1,12 +1,14 @@
 name: CI/CD Pipeline
 
 on: push
-
 jobs:
-  test:
+  example-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Custom Composite Action
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Now handled here
+
+      - name: Run Composite Action
         uses: ./.github/actions/my-composite-action
         with:
           script-path: "scripts/my-test.sh"
