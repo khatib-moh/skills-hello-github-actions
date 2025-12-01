@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4  # Now handled here
+        uses: actions/checkout@v6  # Now handled here
 
       - name: Run Composite Action
         uses: ./.github/actions/my-composite-action
